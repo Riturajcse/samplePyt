@@ -10,6 +10,7 @@ build:
     - ls -a
     - docker-compose -f docker-compose.yml run app ls -lah /    # it shows directories, including /app
     - docker-compose -f docker-compose.yml run app ls -lah /tmp # it's empty
+    - docker-compose -f docker-compose.test.yml run app rake test
 
 integrations:
   hub:
