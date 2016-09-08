@@ -8,6 +8,7 @@ RUN gem install bundler
 COPY Gemfile /app/
 COPY Gemfile.lock /tmp/
 COPY . /tmp
+COPY . /app
 
 RUN bundle install
 
