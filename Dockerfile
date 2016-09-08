@@ -1,12 +1,15 @@
-FROM python:2.7-wheezy
+FROM ruby:2.3.1
 
-RUN pip install --upgrade pip
-COPY requirements/requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
-
-COPY . /app
+RUN mkdir -p /app
 WORKDIR /app
 
-EXPOSE 31005
+RUN gem install bundler
 
-CMD ["python", "main.py"]
+COPY Gemfile /app/
+COPY Gemfile.lock /app/
+
+RUN bundle install
+
+COPY . /app
+
+CMD bin/run-app
