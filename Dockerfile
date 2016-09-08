@@ -7,7 +7,7 @@ RUN gem install bundler
 
 COPY Gemfile /app/
 COPY Gemfile.lock /app/
-COPY samplePyt /app/app
+COPY / /app/app
 
 RUN bundle install
 
