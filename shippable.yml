@@ -9,6 +9,8 @@ build:
     - docker-compose -f docker-compose.yml build app
     - ls -a
     - docker-compose -f docker-compose.yml run app ls -lah /    # it shows directories, including /app
+    - docker-compose -f docker-compose.yml run app cd tmp
+    - docker-compose -f docker-compose.yml run app ls -lah /
     - docker-compose -f docker-compose.yml run app ls -lah /app # it's empty
 
 integrations:
