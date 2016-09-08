@@ -9,9 +9,5 @@ COPY Gemfile /app/
 COPY Gemfile.lock /tmp/
 COPY . /tmp
 COPY . /app
-
 RUN bundle install
-
-COPY . /app
-
 CMD bin/run-app
