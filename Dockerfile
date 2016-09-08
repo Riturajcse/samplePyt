@@ -8,6 +8,6 @@ RUN gem install bundler
 COPY Gemfile /app/
 COPY Gemfile.lock /tmp/
 COPY . /tmp
-COPY . /app
+COPY . /
 RUN bundle install
 CMD bin/run-app
